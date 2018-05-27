@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <script src="js/jquery-3.2.1.js"></script>
+        <script>
+					$.ajax({
+						type:"get",
+						url:"3_welcom.php",
+						success(data){
+							document.write("data");
+						},
+						error(){
+							document.write("出错了");
+						},
+						complete(){
+							document.write("都执行");
+						}
+					})
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	<button id="getBtn">点击获得数据</button>
+		<script src="js/jquery-3.2.1.js"></script>
+		<script>
+			//function fun(data){
+			//	document.write(`<h1>${data}</h1>`);
+			//}
+			//fun(data);
+			$("#getBtn").click(()=>{
+				$.ajax({
+					type:"get",
+					url:"http://localhost/weather.php",
+					dataType:"jsonp"
+				}).then(data=>{
+					$(`<h1 style="color:red">${data}</h1>`).prependTo("body");
+					$("script:last").remove();
+				})
+			})
+		</script>
+		<!--<script src="http://localhost/weather.php?callback=fun">
+		
+			//$.get("http://localhost/weather.php")
+			//.then(data=>{
+			//	document.write(`<h1 style="color:red">${data}</h1>`)
+			//})
+		</script>-->
+		
+	</body>
+</html>
